@@ -4,6 +4,7 @@ import { toast, ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Import toastify CSS
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
+import Loader from '../Reusable components/Loader';
 
 const BookApp = () => {
   const [books, setBooks] = useState([]);
@@ -183,7 +184,8 @@ const BookApp = () => {
 
       {loading ? (
         <div className="flex justify-center items-center h-96">
-          <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-blue-500 border-solid"></div>
+          {/* <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-blue-500 border-solid"></div> */}
+          <Loader></Loader>
         </div>
       ) : filteredBooks.length === 0 ? (
         <div className="flex justify-center items-center h-96">

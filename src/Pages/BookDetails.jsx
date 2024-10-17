@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'; // Use useNavigate instead of useHistory
 import Breadcrumb from './Breadcrumb'; // Import the Breadcrumb component
+import Loader from '../Reusable components/Loader';
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -30,7 +31,8 @@ const BookDetails = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen"> {/* Full screen height */}
-        <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-blue-500 border-solid"></div>
+         <Loader></Loader>
+     
       </div>
     );
   }
