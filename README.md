@@ -103,11 +103,6 @@ By leveraging these libraries and frameworks, this project is equipped to handle
 
 3. npm install
 
-<<<<<<< HEAD
-4.
-npm run dev
-
-## ------------Thank You--------------
-=======
 4. npm run dev
->>>>>>> 92bbeca4d45b7b10eb638e2d011129bd84a0840e
+
+ # ------------Thank You--------------
