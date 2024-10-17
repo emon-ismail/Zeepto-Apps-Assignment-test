@@ -202,8 +202,8 @@ const BookApp = () => {
                   className="w-full h-48 object-cover"
                 />
                 <h2 className="mt-4 text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">{book.title}</h2>
-                <p className="text-sm text-gray-500">By: {book.authors[0]?.name}</p>
-                <p className="text-sm text-gray-400">Genre: {book.subjects.join(', ')}</p>
+                <p className="text-sm text-gray-500 py-1">By: {book.authors[0]?.name}</p>
+                <p className="text-sm text-gray-400 py-1">Genre: {book.subjects.join(', ')}</p>
                 <p className="text-sm text-gray-400">ID: {book.id}</p>
 
                 <div className='flex justify-between'>
