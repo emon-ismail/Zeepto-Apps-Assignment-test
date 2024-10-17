@@ -111,35 +111,36 @@ const BookApp = () => {
     }
 
     return (
-      <div className="flex justify-center space-x-4 mt-4">
-        {currentPage > 1 && (
-          <button
-            onClick={() => setCurrentPage(currentPage - 1)}
-            className="px-4 py-2 bg-gray-300 rounded"
-          >
-            Previous
-          </button>
-        )}
-
-        {pageNumbers.map((page) => (
-          <button
-            key={page}
-            onClick={() => setCurrentPage(page)}
-            className={`px-4 py-2 rounded ${page === currentPage ? 'bg-purple-500 text-white' : 'bg-gray-300'}`}
-          >
-            {page}
-          </button>
-        ))}
-
-        {currentPage < totalPages && (
-          <button
-            onClick={() => setCurrentPage(currentPage + 1)}
-            className="px-4 py-2 bg-gray-300 rounded"
-          >
-            Next
-          </button>
-        )}
-      </div>
+      <div className="flex flex-wrap justify-center space-x-2 sm:space-x-4 mt-4">
+      {currentPage > 1 && (
+        <button
+          onClick={() => setCurrentPage(currentPage - 1)}
+          className="px-2 sm:px-4 py-1 sm:py-2 bg-gray-300 rounded text-xs sm:text-base"
+        >
+          Previous
+        </button>
+      )}
+    
+      {pageNumbers.map((page) => (
+        <button
+          key={page}
+          onClick={() => setCurrentPage(page)}
+          className={`px-2 sm:px-4 py-1 sm:py-2 rounded text-xs sm:text-base ${page === currentPage ? 'bg-purple-500 text-white' : 'bg-gray-300'}`}
+        >
+          {page}
+        </button>
+      ))}
+    
+      {currentPage < totalPages && (
+        <button
+          onClick={() => setCurrentPage(currentPage + 1)}
+          className="px-2 sm:px-4 py-1 sm:py-2 bg-gray-300 rounded text-xs sm:text-base"
+        >
+          Next
+        </button>
+      )}
+    </div>
+    
     );
   };
 
@@ -193,41 +194,47 @@ const BookApp = () => {
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
-            {filteredBooks.map((book) => (
-              <div key={book.id} className="card bg-white shadow-md p-4 rounded-3xl hover:shadow-2xl hover:rounded-2xl">
-                <img
-                  src={book.formats['image/jpeg'] || 'https://via.placeholder.com/150'}
-                  alt={book.title}
-                  className="w-full h-48 object-cover"
-                />
-                <h2 className="mt-4 text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">{book.title}</h2>
-                <p className="text-sm text-gray-500 py-1">By: {book.authors[0]?.name}</p>
-                <p className="text-sm text-gray-400 py-1">Genre: {book.subjects.join(', ')}</p>
-                <p className="text-sm text-gray-400">ID: {book.id}</p>
+         <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4 sm:gap-6 sm:p-6">
+  {filteredBooks.map((book) => (
+    <div
+      key={book.id}
+      className="card bg-white shadow-md p-3 rounded-2xl hover:shadow-lg hover:rounded-xl transition-all duration-300"
+    >
+      <img
+        src={book.formats['image/jpeg'] || 'https://via.placeholder.com/150'}
+        alt={book.title}
+        className="w-full h-40 sm:h-48 object-cover rounded-xl"
+      />
+      <h2 className="mt-3 sm:mt-4 text-base sm:text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+        {book.title}
+      </h2>
+      <p className="text-xs sm:text-sm text-gray-500 py-1">By: {book.authors[0]?.name}</p>
+      <p className="text-xs sm:text-sm text-gray-400 py-1">Genre: {book.subjects.join(', ')}</p>
+      <p className="text-xs sm:text-sm text-gray-400">ID: {book.id}</p>
 
-                <div className='flex justify-between'>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleWishlist(book); // Toggle the wishlist status
-                    }}
-                    className={`mt-2 ${
-                      wishlist.find((item) => item.id === book.id)
-                        ? 'text-red-600 text-xl font-bold'
-                        : 'text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 text-xl'
-                    }`}
-                  >
-                    {wishlist.find((item) => item.id === book.id) ? '❤️ Wishlisted' : '♡ Add to Wishlist'}
-                  </button>
+      <div className="flex justify-between items-center mt-3 sm:mt-4">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleWishlist(book); // Toggle the wishlist status
+          }}
+          className={`${
+            wishlist.find((item) => item.id === book.id)
+              ? 'text-red-600 text-base sm:text-lg font-bold'
+              : 'text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 text-base sm:text-lg'
+          }`}
+        >
+          {wishlist.find((item) => item.id === book.id) ? '❤️ Wishlisted' : '♡ Add to Wishlist'}
+        </button>
 
-                  <Link to={`/book/${book.id}`} className="mt-4 inline-block bg-pink-500 text-white px-4 py-2 rounded">
-                    Read
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+        <Link to={`/book/${book.id}`} className="inline-block bg-pink-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded">
+          Read
+        </Link>
+      </div>
+    </div>
+  ))}
+</div>
+
 
           {filteredBooks.length > 0 && renderPagination()}
         </>
