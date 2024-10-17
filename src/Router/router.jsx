@@ -1,7 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Navbar } from '../Navbar/Navbar';
+
  import Home from '../Pages/Home';
-// import About from './pages/About';
  import Layout from '../Layout/Layout';
 import Book from '../Pages/Book';
 import WishlistPage from '../Pages/WishlistPage';

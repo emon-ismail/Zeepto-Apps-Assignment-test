@@ -5,8 +5,6 @@ body {
     font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-
-
 :root {
     --bg-color: #ffffff; /* Define the background color variable */
   }
@@ -14,7 +12,6 @@ body {
     font-family: 'Mona Sans';
     src: 
     url('./assets/Fonts/Mona-Sans.ttf') format('woff2'),
-         /* url('./assets/fonts/MonaSans-Regular.woff') format('woff'), */
          url('./assets/Fonts/Mona-Sans-Light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
