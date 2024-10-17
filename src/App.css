@@ -11,7 +11,7 @@ body {
   @font-face {
     font-family: 'Mona Sans';
     src: 
-    url('./assets/Fonts/Mona-Sans-BlackWideItalic.ttf') format('woff2');
+    url('./assets/Fonts/Mona-Sans-ExtraBoldWideItalic.ttf') format('woff2');
          /* url('./assets/Fonts/Mona-Sans-Light.ttf') format('truetype'); */
     font-weight: normal;
     font-style:normal;
