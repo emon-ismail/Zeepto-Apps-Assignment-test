@@ -97,3 +97,12 @@ By leveraging these libraries and frameworks, this project is equipped to handle
 1. Clone the repository:
    ```bash
    git clone https://github.com/emon-ismail/Zeepto-Apps-Assignment-test.git
+
+2.
+cd my-practice-test
+
+3.
+npm install
+
+4.
+npm run dev
