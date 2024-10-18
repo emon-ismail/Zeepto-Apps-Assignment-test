@@ -62,7 +62,7 @@ const WishlistPage = () => {
       ) : (
         
       <div>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center py-3">
   <h2 className="text-xl  md:text-3xl border-purple-600 border p-3 rounded-md text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
     <Typewriter
       textStyle={{
