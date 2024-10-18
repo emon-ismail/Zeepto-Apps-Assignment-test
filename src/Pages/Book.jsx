@@ -198,7 +198,8 @@ const BookApp = () => {
   {filteredBooks.map((book) => (
     <div
       key={book.id}
-      className="card bg-white shadow-md p-3 rounded-2xl hover:shadow-lg hover:rounded-xl transition-all duration-300"
+      className="card border-4 border-gray-400 shadow-2xl p-3 rounded-2xl hover:shadow-lg hover:rounded-xl transition-all duration-300"
+      style={{ backgroundColor: 'var(--bg-header)' }}
     >
       <img
         src={book.formats['image/jpeg'] || 'https://via.placeholder.com/150'}

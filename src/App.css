@@ -1,20 +1,44 @@
+/* Base styles */
 body {
-    margin: 0;
-    padding: 0;
-    background-image: radial-gradient(circle, #7d003f 0%, #14101b 100%);
-    font-family: "Mona Sans";
+  margin: 0;
+  padding: 0;
+  background-image: radial-gradient(circle, #14101b 0%, #200109 100%);
+ 
+  font-family: "Mona Sans";
 }
 
 :root {
-    --bg-color: #ffffff; /* Define the background color variable */
-  }
-  @font-face {
-    font-family: 'Mona Sans';
-    src: 
-    url('./assets/Fonts/Mona-Sans-ExtraBoldWideItalic.ttf') format('woff2');
-         /* url('./assets/Fonts/Mona-Sans-Light.ttf') format('truetype'); */
-    font-weight: normal;
-    font-style:normal;
+  --bg-color: #ffffff; /* Define the background color variable */
+  --bg-header: background-image: radial-gradient(circle, #7d003f 0%, #14101b 100%);
 }
 
-/* Add more @font-face rules for different font weights/styles if necessary */
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('./assets/Fonts/Mona-Sans-ExtraBoldWideItalic.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px; /* Customize scrollbar width */
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: radial-gradient(circle, #7d003f 0%, #14101b 100%);
+  border-radius: 10px; /* Make the scrollbar edges rounded */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Customize the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-image: radial-gradient(circle, #7d003f 0%, #14101b 100%);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Make scrollbar thinner in Firefox */
+  scrollbar-color: rgba(253, 176, 189, 0.626) #600000;
+}

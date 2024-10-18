@@ -57,7 +57,8 @@ const BookDetails = () => {
       />
 
       {book ? (
-        <div className="bg-white shadow-md rounded-lg p-6 lg:p-8 max-w-4xl mx-auto">
+        <div className=" shadow-md border-4 border-gray-400 rounded-lg p-6 lg:p-8 max-w-4xl mx-auto"
+        style={{ backgroundColor: 'var(--bg-header)' }}>
           <img
             src={book.formats['image/jpeg'] || 'https://via.placeholder.com/150'}
             alt={book.title}

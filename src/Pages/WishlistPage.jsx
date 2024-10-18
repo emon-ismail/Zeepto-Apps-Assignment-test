@@ -83,14 +83,15 @@ const WishlistPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           
           {wishlist.map((book) => (
-            <div key={book.id} className="bg-white p-4 rounded-3xl shadow-md">
+            <div key={book.id}  className="card border-4 border-gray-400 shadow-2xl p-3 rounded-2xl hover:shadow-lg hover:rounded-xl transition-all duration-300"
+      style={{ backgroundColor: 'var(--bg-header)' }}>
               <img
                 src={book.formats['image/jpeg'] || 'https://via.placeholder.com/150'}
                 alt={book.title}
                 className="w-full h-48 object-cover"
               />
               <h2 className="mt-2 text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">{book.title}</h2>
-              <p className=' text-lg' >By: {book.authors[0]?.name}</p>
+              <p className=' text-lg text-gray-400' >By: {book.authors[0]?.name}</p>
               {/* <p className='py-1 text-lg'>Genre: {book.subjects.join(', ')}</p> */}
 
               <div className='flex flex-col pt-8 sm:flex-row justify-between items-center'>
