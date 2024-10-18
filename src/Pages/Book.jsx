@@ -153,34 +153,33 @@ const BookApp = () => {
         hideProgressBar={false}
         transition={Zoom}
       />
-      <div className="shadow rounded-b-2xl text-white p-6 flex flex-col md:flex-row md:justify-between items-center" style={{ backgroundColor: 'var(--bg-color)' }}>
+      <div className="shadow rounded-b-2xl text-white md:p-6 p-3 flex flex-col md:flex-row md:justify-between items-center" style={{ backgroundColor: 'var(--bg-color)' }}>
         <h1 className="text-2xl font-bold mb-4 md:mb-0 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 border-b-2 border-b-purple-600 hidden md:block" 
           data-aos="zoom-in-left">Book List</h1>
         
         <div className="flex flex-col md:flex-row md:items-center w-full md:w-auto" data-aos="zoom-in-right">
-          <input
-            type="text"
-            placeholder="Search by title"
-            className="px-4 py-3 w-full md:w-64 rounded-lg border-2 border-purple-500 text-black focus:border-pink-500 focus:ring focus:ring-blue-200 transition mb-4 md:mb-0 md:mr-4"
-            value={searchTerm}
-            onChange={handleSearch}
-          />
+  <input
+    type="text"
+    placeholder="Search by title"
+    className="px-2 py-2 md:px-4 md:py-4  w-full md:w-64 rounded-lg border-2 border-purple-500 text-black focus:border-pink-500 focus:ring focus:ring-blue-200 transition mb-3 md:mb-0 md:mr-4 sm:px-1 sm:py-1"
+    value={searchTerm}
+    onChange={handleSearch}
+  />
 
-          <select 
-            className="text-black w-full md:w-auto px-4 py-3 rounded-lg border-2 border-purple-500 focus:border-pink-500 focus:ring focus:ring-blue-200 transition"
-            onChange={handleGenreFilter} 
-            value={genre}
-          >
-            <option value="">All Books</option> {/* Add an "All Books" option */}
-            {genres.map((genre, index) => (
-              <option className='text-black font-semibold' key={index} value={genre}>
-                {genre}
-              </option>
-            ))}
-          </select>
+  <select
+    className="text-black w-full md:w-auto px-2 py-2 md:px-4 md:py-3 rounded-lg border-2 border-purple-500 focus:border-pink-500 focus:ring focus:ring-blue-200 transition sm:px-1 sm:py-1"
+    onChange={handleGenreFilter}
+    value={genre}
+  >
+    <option value="">All Books</option>
+    {genres.map((genre, index) => (
+      <option className="text-black font-semibold" key={index} value={genre}>
+        {genre}
+      </option>
+    ))}
+  </select>
+</div>
 
-          
-        </div>
       </div>
 
       {loading ? (
