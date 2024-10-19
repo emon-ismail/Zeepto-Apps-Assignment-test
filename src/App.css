@@ -8,7 +8,7 @@ body {
 }
 
 :root {
-  --bg-color: #ffffff; /* Define the background color variable */
+  --bg-color: #421b1b; /* Define the background color variable */
   --bg-header: background-image: radial-gradient(circle, #7d003f 0%, #14101b 100%);
 }
 
